@@ -4,6 +4,7 @@ Setup
 ```
 rosdep install -r --from-paths . --ignore-src -y
 catkin build eusurdfwrl
+sudo apt-get install meshlab
 ```
 
 Install simtrans

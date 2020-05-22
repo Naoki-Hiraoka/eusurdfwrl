@@ -13,3 +13,5 @@ ls $EUSURDF_DIR/worlds | grep .world | sed -e "s/.world//" | xargs -P 8 -I@ sh -
 
 # convert model.urdf
 ls $EUSURDF_DIR/models | xargs -P 16 -I@ sh -c "echo @ && $CMD -i $EUSURDF_DIR/models/@/model.urdf -o $EUSURDFWRL_DIR/models/@.wrl";
+# simplify collision
+ls $EUSURDFWRL_DIR/models | grep collision.wrl | xargs -P 1 -I@ sh -c "echo @ && meshlabserver -i $EUSURDFWRL_DIR/models/@ -o $EUSURDFWRL_DIR/models/@ -s ./filter.mlx";
