@@ -1,13 +1,8 @@
 # eusurdfwrl
 
-Setup
-```
-rosdep install -r --from-paths . --ignore-src -y
-catkin build eusurdfwrl
-sudo apt-get install meshlab
-```
+## How to Build
 
-Install simtrans
+First, install simtrans
 ```
 git clone https://github.com/fkanehiro/simtrans
 cd simtrans
@@ -15,11 +10,13 @@ sudo pip install -r requirements.txt
 sudo python setup.py install
 ```
 
-Convert models
+Then, build eusurdfwrl
 ```
-cd scripts
-./convertall.sh
+rosdep install -r --from-paths . --ignore-src -y
+catkin build eusurdfwrl
 ```
+
+## Conversion
 
 eusurdf/models/\*/model.urdf -> eusurdfwrl/models/\*.wrl
 

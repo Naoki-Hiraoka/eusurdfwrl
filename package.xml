@@ -11,5 +11,6 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_depend>eusurdf</build_depend>
+  <build_depend>meshlab</build_depend>
 
 </package>
