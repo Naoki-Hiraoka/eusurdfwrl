@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('filename')
@@ -33,7 +35,7 @@ for inc in root[0]:
             continue
         obj = dict()
         obj["name"] = name
-        obj["file"] = eusurdfwrl_dir + "/models/" + uri.replace("model://","") + ".wrl"
+        obj["file"] = eusurdfwrl_dir + "/models/" + uri.replace("model://","") + "/" + uri.replace("model://","") + ".wrl"
         obj["static"] = True
         obj["static_joint"] = True
         pose_array = pose.split()

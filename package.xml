@@ -2,7 +2,7 @@
 <package format="2">
   <name>eusurdfwrl</name>
   <version>0.0.0</version>
-  <description>The eusurdfwrl package</description>
+  <description>wrl models converted from eusurdf</description>
 
   <maintainer email="hiraoka@jsk.imi.i.u-tokyo.ac.jp">Naoki Hiraoka</maintainer>
 
@@ -10,7 +10,11 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <build_depend>catkin_virtualenv</build_depend>
   <build_depend>eusurdf</build_depend>
-  <build_depend>meshlab</build_depend>
+
+  <export>
+    <pip_requirements>requirements.txt</pip_requirements>
+  </export>
 
 </package>
