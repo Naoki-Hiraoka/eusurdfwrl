@@ -12,7 +12,6 @@ objs = dict()
 
 import rospkg
 rospack = rospkg.RosPack()
-eusurdfwrl_dir = rospack.get_path("eusurdfwrl")
 
 from scipy.spatial.transform import Rotation as R
 
@@ -35,7 +34,7 @@ for inc in root[0]:
             continue
         obj = dict()
         obj["name"] = name
-        obj["file"] = eusurdfwrl_dir + "/models/" + uri.replace("model://","") + "/" + uri.replace("model://","") + ".wrl"
+        obj["file"] = "$(find eusurdfwrl)/models/" + uri.replace("model://","") + "/" + uri.replace("model://","") + ".wrl"
         obj["static"] = True
         obj["static_joint"] = True
         pose_array = pose.split()
