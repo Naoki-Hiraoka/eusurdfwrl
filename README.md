@@ -5,6 +5,8 @@
 ## How to Build
 
 First, install simtrans
+
+for ubuntu18
 ```
 cd /tmp
 git clone https://github.com/fkanehiro/simtrans
@@ -12,6 +14,16 @@ cd simtrans
 sudo pip install -r requirements.txt
 sudo python setup.py install
 ```
+
+for ubuntu20
+```
+cd /tmp
+git clone https://github.com/Naoki-Hiraoka/simtrans -b ubuntu20
+cd simtrans
+sudo pip install -r requirements.txt
+sudo python setup.py install
+```
+/usr/local/lib/python3.8/dist-packages/collada/resources/__init__.py を、https://github.com/pycollada/pycollada/blob/v0.9/collada/resources/__init__.py のバージョンに戻す. (とりあえず手編集)
 
 Then, build eusurdfwrl
 ```
