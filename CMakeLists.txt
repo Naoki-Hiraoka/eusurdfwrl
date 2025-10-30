@@ -1,11 +1,16 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(eusurdfwrl)
 
-find_package(catkin REQUIRED catkin_virtualenv)
+find_package(catkin REQUIRED)
 
 catkin_package()
 
-catkin_generate_virtualenv()
+if("$ENV{ROS_DISTRO}" STRLESS_EQUAL "melodic")
+  find_package(catkin_virtualenv)
+  catkin_generate_virtualenv()
+else()
+  add_custom_target(${PROJECT_NAME}_generate_virtualenv)
+endif()
 
 catkin_install_python(
   PROGRAMS scripts/convertworld.py
@@ -15,5 +20,7 @@ include(cmake/eusurdfwrl.cmake)
 convert_urdf_to_wrl()
 convert_gazebo_world_to_environment_yaml()
 
-install(FILES requirements.txt
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+if("$ENV{ROS_DISTRO}" STRLESS_EQUAL "melodic")
+  install(FILES requirements.txt
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+endif()
