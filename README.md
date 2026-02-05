@@ -23,7 +23,8 @@ cd simtrans
 sudo pip install -r requirements.txt
 sudo python setup.py install
 ```
-/usr/local/lib/python3.8/dist-packages/collada/resources/__init__.py を、https://github.com/pycollada/pycollada/blob/v0.9/collada/resources/__init__.py のバージョンに戻す. (とりあえず手編集)
+- /usr/local/lib/python3.8/dist-packages/collada/resources/__init__.py を、https://github.com/pycollada/pycollada/blob/v0.9/collada/resources/__init__.py のバージョンに戻す. (とりあえず手編集)
+- /usr/local/lib/python3.8/dist-packages/collada/common.py の1行目を、from functools import cache から from functools import lru_cache as cache へ変更.
 
 Then, build eusurdfwrl
 ```
